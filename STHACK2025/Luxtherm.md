@@ -175,7 +175,7 @@ Je me suis alors mis à fouiller tout les fichiers dumpés jusqu'à tomber sur l
 	bare = false
 	logallrefupdates = true
 [remote "origin"]
-#root.luxtherm@gmail.com:2025sthacK+-/	
+#root.luxtherm@gmail.com:********	
 	url = https://root.luxtherm:2025sthacK+-/@gitlab.com/root.luxtherm-group/webapp-auto-deploy
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "main"]
