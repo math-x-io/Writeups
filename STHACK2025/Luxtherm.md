@@ -163,6 +163,28 @@ job_Deploy:
 
 Direction le dépôt GitLab pour vérifier les traces d’exécution des pipelines !
 
+Malheureusement encore une fois, je me retrouve face à une erreur 403 ...
+
+Pas le choix le dépôt étant privé et donc accessible uniquement avec le compte de son utilisateur, il va falloir trouver son login/mdp.
+
+Je me suis alors mis à fouiller tout les fichiers dumpés jusqu'à tomber sur le fichier `.git/config` : 
+```
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+#root.luxtherm@gmail.com:2025sthacK+-/	
+	url = https://root.luxtherm:2025sthacK+-/@gitlab.com/root.luxtherm-group/webapp-auto-deploy
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+```
+Ce fichier contient normalement seulement des informations sur les branches, les remotes, et d'autres paramètres liés au comportement de Git avec le dépôt. Or, par chance (pour nous) le développeur ayant travaillé sur le projet a laissé son login/mdp en commentaire. 😈
+
+On peut désormais se connecter au compte de luxther et accéder au dépôt Gitlab.
 
 ## 📦 Balade sur le dépôt Git
 
